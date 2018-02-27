@@ -1,0 +1,34 @@
+<div class="col-xs-12">
+
+  <h1>Add Runner</h1>
+  <form class="form-inline" role="form" [formGroup]="runnerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input class="form-control" type="number" formControlName="id" placeholder="Id" />
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" formControlName="name" placeholder="Name" />
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="number" formControlName="age" placeholder="Age" />
+    </div>
+    <button class="btn btn-danger" type="submit" [disabled]="!runnerForm.valid">Submit</button>
+  </form>
+
+  <hr/>
+  <div class="clearfix"></div>
+
+  <h1>Search Runner</h1>
+  <form role="form">
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="Type to search" (keyup)="searchRunner($event)" />
+    </div>
+  </form>
+
+  <hr/>
+  <div class=" clearfix "></div>
+
+  <h1>Runners</h1>
+  <div *ngFor="let runner of newRunners$ | async ">
+    <app-home-runners [runner]="runner"></app-home-runners>
+  </div>
+</div>

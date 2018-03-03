@@ -1,18 +1,19 @@
 import { IRunnerState } from './i-runner-state';
-import { ADD_RUNNER, SEARCH_RUNNER } from './state-actions';
+import { ADD_RUNNER, SEARCH_RUNNER, STORE_RUNNERS } from './state-actions';
 
-// To refactor and get data from API
-const runners = [
-  { id: 1, name: 'Mark Herrera', age: 35 },
-  { id: 2, name: 'Matthew Scicluna', age: 30 },
-  { id: 3, name: 'Mark Axiaq', age: 27 },
-  { id: 4, name: 'James Anastasi', age: 32 }
-];
+const runners = [];
 
 const initialState: IRunnerState = {
   runners,
   newRunners: runners
 };
+
+function storeRunners(state, action): IRunnerState {
+  return Object.assign({}, state, {
+    runners: action.runners,
+    newRunners: action.runners
+  });
+}
 
 function addRunner(state, action): IRunnerState {
   return Object.assign({}, state, {
@@ -31,6 +32,8 @@ function searchRunner(state, action): IRunnerState {
 
 export function reducer(state = initialState, action) {
   switch (action.type) {
+    case STORE_RUNNERS:
+      return storeRunners(state, action);
     case ADD_RUNNER:
       return addRunner(state, action);
     case SEARCH_RUNNER:

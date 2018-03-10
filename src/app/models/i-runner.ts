@@ -1,5 +1,3 @@
-export interface IRunner {
-  id: number;
-  name: string;
-  age: number;
+export class IRunner {
+  constructor(id: number, name: string, age: number) {}
 }

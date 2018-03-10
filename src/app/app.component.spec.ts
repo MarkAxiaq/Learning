@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { AREAS_COMPONENTS } from './areas/index';
 import { StateActions } from './store/state-actions';
 import { IRunnerState } from './store/i-runner-state';
+import { RunnersService } from './services/runners.service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(
@@ -19,7 +21,13 @@ describe('AppComponent', () => {
           FormsModule,
           NgReduxModule
         ],
-        providers: [FormBuilder, StateActions]
+        providers: [
+          FormBuilder,
+          StateActions,
+          RunnersService,
+          HttpClient,
+          HttpHandler
+        ]
       }).compileComponents();
     })
   );

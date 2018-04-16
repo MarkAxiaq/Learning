@@ -1,4 +1,4 @@
-import { NgRedux } from 'ng2-redux';
+import { NgRedux } from '@angular-redux/store';
 import { Injectable } from '@angular/core';
 
 import { IRunnerState } from './i-runner-state';

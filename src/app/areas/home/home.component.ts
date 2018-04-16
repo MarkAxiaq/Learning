@@ -1,11 +1,10 @@
 import { Observable } from 'rxjs/Rx';
-import { NgRedux, select } from 'ng2-redux';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
 import { Component, OnInit } from '@angular/core';
 import { IRunner } from '../../models/i-runner';
 import { IRunnerState } from '../../store/i-runner-state';
 import { StateActions } from '../../store/state-actions';
+import { select, NgRedux } from '@angular-redux/store';
 
 @Component({
   selector: 'app-home',

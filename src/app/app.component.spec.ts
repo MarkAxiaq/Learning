@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormBuilder, ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { NgReduxModule, NgRedux } from 'ng2-redux';
+import { NgReduxTestingModule } from '@angular-redux/store/testing';
 
 import { AppComponent } from './app.component';
 import { AREAS_COMPONENTS } from './areas/index';
@@ -19,7 +19,7 @@ describe('AppComponent', () => {
           RouterTestingModule,
           ReactiveFormsModule,
           FormsModule,
-          NgReduxModule
+          NgReduxTestingModule
         ],
         providers: [
           FormBuilder,

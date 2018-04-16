@@ -3,7 +3,7 @@ import { ADD_RUNNER, SEARCH_RUNNER, STORE_RUNNERS } from './state-actions';
 
 const runners = [];
 
-const initialState: IRunnerState = {
+export const initialState: IRunnerState = {
   runners,
   newRunners: runners
 };
